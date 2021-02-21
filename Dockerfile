@@ -1,6 +1,14 @@
-FROM python:3.9-alpine AS server
+FROM ubuntu:latest AS server
 
-RUN python3.9 -m pip install Flask
+RUN apt-get update \
+ && apt-get install -y \
+        python3.9 \
+        python3-pip \
+ && apt-get clean
+
+RUN python3.9 -m pip install \
+        cryptography \
+        Flask
 
 
 FROM alpine:latest AS client
