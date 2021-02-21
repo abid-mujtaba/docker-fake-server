@@ -1,5 +1,5 @@
 services:
-  artifactory:
+  raw.githubusercontent.com:
     build:
       context: .
       dockerfile: Dockerfile
@@ -17,8 +17,8 @@ services:
       dockerfile: Dockerfile
       target: client
     depends_on:
-      - artifactory
+      - raw.githubusercontent.com
     command:
       - curl
       - -k
-      - https://artifactory
+      - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
