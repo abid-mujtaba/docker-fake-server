@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 
 app = Flask(__name__)
@@ -7,9 +7,9 @@ app = Flask(__name__)
 def process_route():
     return "Hello, World!\n"
 
-@app.route("/ohmyzsh/ohmyzsh/<path:subpath>")
+@app.route("/ohmyzsh/ohmyzsh/<path:subpath>", methods=["GET", "POST"])
 def process_sub_path(subpath):
-    return f"Accessing subpath: {subpath}\n"
+    return f"Accessing subpath: {subpath} with method: {request.method}\n"
 
 
 if __name__ == "__main__":
