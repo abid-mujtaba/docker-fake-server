@@ -21,4 +21,4 @@ services:
       - artifactory
     command:
       - curl
-      - artifactory
+      - http://artifactory
