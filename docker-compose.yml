@@ -4,13 +4,12 @@ services:
       context: .
       dockerfile: Dockerfile
       target: server
+    working_dir: /workarea
     volumes:
       - .:/workarea:ro
     command:
       - python3.9
-      - -m
-      - flask
-      - run
+      - server.py
 
   client:
     build:
