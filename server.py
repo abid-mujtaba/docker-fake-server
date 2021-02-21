@@ -9,7 +9,12 @@ def process_route():
 
 @app.route("/ohmyzsh/ohmyzsh/<path:subpath>", methods=["GET", "POST"])
 def process_sub_path(subpath):
-    return f"Accessing subpath: {subpath} with method: {request.method}\n"
+    response = f"Accessing subpath: {subpath} with method: {request.method}\n"
+
+    if request.method == "POST":
+        response += f"Payload: {request.form}\n"
+
+    return response
 
 
 if __name__ == "__main__":
