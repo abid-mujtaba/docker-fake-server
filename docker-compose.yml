@@ -28,5 +28,4 @@ services:
       - hermetic
     command:
       - curl
-      - -k
       - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh

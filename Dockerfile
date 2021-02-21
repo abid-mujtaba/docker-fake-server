@@ -14,3 +14,4 @@ RUN python3.9 -m pip install \
 FROM alpine:latest AS client
 
 RUN apk --no-cache add curl
+COPY curl_insecure.sh /usr/local/bin/curl
